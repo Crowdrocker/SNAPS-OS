@@ -1,0 +1,74 @@
+> Important Keybinds
+
+the most important keybind to know is *SUPER+K*
+
+this will open a searchable menu with all of your keybinds.
+
+whenever SUPER is noted in your keybinds, that's the button between ctrl and alt. on most keyboards it has a windows logo, on macOS it'll be the option key.
+
+However, you don't want to be referencing this menu all the time, so here's the keybinds you should learn first:
+
+[^SUPER+SPACE]:
+opens your app runner, also set up to find files within your home directory and find DMS settings.
+
+[^SUPER+Y]:
+opens shelly, your package installer GUI. first time you can pick which repositories (pacman + AUR recommended, flatpak optional).
+
+*super+shift+Y* opens the unipkg TUI (if installed), which works on non-arch distros.
+
+[^SUPER+R]:
+reloads mango config, important after changing config files.
+
+[^SUPER+1-9]:
+switch between workspaces. hold SHIFT to move the active window with you.
+
+[^SUPER+Q]:
+closes the current window (like pressing X on a desktop window).
+
+[^SUPER+Z]:
+opens the power menu (logout/reboot/shutdown).
+
+[^SUPER+E]:
+opens your file browser (nautilus).
+
+[^SUPER+B]:
+opens firefox.
+
+[^SUPER+ENTER]:
+opens your terminal (ghostty).
+
+[^SUPER+H]:
+opens command help TUI with TLDR summaries and man page access.
+
+[^SUPER+SHIFT+H]:
+opens this help system.
+
+[^SUPER+X]:
+opens process manager / performance monitor (CPU/RAM/disk usage, kill frozen programs).
+
+[^SUPER+K]:
+full keybind overview, searchable.
+
+[^SUPER+W]:
+wallpaper selector (choose wallpaper groups).
+
+[^SUPER+M]:
+mango config editor TUI.
+
+[^SUPER+Left Mouse]:
+drag and re-organize windows.
+
+[^SUPER+Right Mouse]:
+drag to re-size windows.
+
+[^SUPER+T]:
+toggle float/unfloat active window.
+
+[^SUPER+F]:
+toggle fullscreen.
+
+[^SUPER+C]:
+toggle scratchpad.
+
+[^SUPER+ALT+SPACE]:
+toggle terminal scratchpad (quick-access ghostty).

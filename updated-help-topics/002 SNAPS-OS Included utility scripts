@@ -1,0 +1,97 @@
+> Included Utility Scripts
+
+SNAPS-OS has a couple of utility scripts, all of which can be found under ~/.config/snapsos
+
+#help/cmd-help.sh#
+this script presents a searchable list of commands with their TLDR explainers on the right.
+the list of commands can be found in cmds.list.
+when the user selects a command, it'll open the man page for that command.
+
+this is bound to *super+H* and the terminal alias `tldrtui`
+
+#help/help.sh#
+shows this menu! it effectively shows you all the files in the topics folder with their contents.
+
+this is bound to *super+shift+H* and the terminal alias `helptui`
+
+#help/references.sh#
+this script takes a list file (like references.list, mangoipc.list or DMSipc.list) and presents it using fzf.
+this is used by the documentation TUI to present searchable reference lists.
+
+#screenshots/mode-toggle.sh#
+this script rotates between 3 save modes for screenshots. modes are:
+save to clipboard / save to file / open in editor
+
+this is bound to *PrintScreen*
+
+#screenshots/fullscreen.sh#
+takes an all-screen screenshot
+
+this is bound to *super+ctrl+PrintScreen*
+
+#screenshots/region.sh#
+allows you to select a region to capture
+
+this is bound to *super+PrintScreen*
+
+#tips/tips.list#
+source file the tips system pulls from. the line that fetches tips:
+`shuf -n 1 ~/.config/snapsos/tips/tips.list`
+
+this runs automatically on opening your first terminal (not on successive terminals)
+you can also get a tip by running `tipme` in the terminal or pressing *super+0*
+
+#tuis/aur-install.sh#
+provides a graphical interface for browsing the AUR, including multi-select and a details pane
+
+launch with the terminal alias `aurgui`
+
+#tuis/pkg-install.sh#
+provides a graphical interface for browsing the pacman repository, including multi-select and a details pane
+
+launch with the terminal alias `pacgui`
+
+#tuis/documentation.sh#
+provides quick access to various pieces of documentation and interactive reference lists
+
+launch with the alias `documentation` or the bind *super+shift+M*
+
+#tuis/layout-switch.sh#
+allows you to switch layouts using a selectable menu, pulls layouts from layouts.list
+
+launch with the bind *super+shift+W*
+
+#tuis/project-select.sh#
+shows a list of git repositories within your projects directory (default ~/projects) with their top-level files and readme.
+when you select a repo, it opens in code-oss (vscode).
+
+launch with the alias `git-projects` or the bind *super+shift+tab*
+
+#tuis/bar-presets.sh#
+presents an FZF menu to toggle pre-configured bars and dock, as well as select from combination presets.
+
+launch with *super+shift+D*
+
+#mango-config.sh#
+gives a browsable TUI for all config files in ~/.config/mango with a preview; selecting opens in micro.
+
+launch with the alias `mangoconf` or the bind *super+M*
+
+#config-overview/menu.sh#
+gives a browsable TUI that shows details for each line in your mango config file.
+
+launch with *super+alt+M*
+
+#wallpapers/setwallpapergroup.sh#
+called with a folder name or without. with a folder name, sets wallpapers to that folder.
+without, presents a menu to select a folder.
+
+bound to *super+W*, cycling forward/back with *alt+W* and *shift+alt+W*
+
+#optional: unipkg#
+opened via `unipkg launch-tui`, `unipkg help-tui` or `unipkg help`
+also bound to *super+shift+Y*
+
+#optional: dotfile-git-sync#
+run from the terminal: `dotfile-git-sync ~/path/to/your/github/repository`
+shows a menu to multi-select folders from ~/.config, moves them to your repo, symlinks with stow, and syncs to github.

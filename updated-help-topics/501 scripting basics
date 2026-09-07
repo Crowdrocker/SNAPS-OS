@@ -1,0 +1,79 @@
+> Scripting Basics
+
+Bash scripting fundamentals for SNAPS-OS.
+
+### Shebang
+
+every script starts with a shebang line that tells the system which interpreter to use:
+
+#!/bin/bash
+
+this must be the very first line of the file.
+
+### Variables
+
+name="SNAPS-OS"
+echo "Hello, $name"
+echo "Home: $HOME"
+
+use $ to reference variables. wrap in quotes to preserve spaces.
+
+### Echo
+
+echo "text": prints text to stdout.
+echo "variable: $var": prints variable value.
+
+### Reading Files (cat)
+
+content=$(cat /path/to/file)
+echo "$content"
+
+### Command Substitution
+
+current_dir=$(pwd)
+files=$(ls)
+echo "$files"
+
+use $(command) to capture command output into a variable.
+the old backtick syntax (`command`) also works but is less preferred.
+
+### Exit Codes
+
+0 = success, non-zero = failure.
+Use $? to get the exit code of the last command:
+
+ls /tmp
+echo "Exit code: $?"
+
+scripts should exit with appropriate codes:
+exit 0   # success
+exit 1   # general error
+
+### Making Scripts Executable
+
+chmod +x myscript.sh
+
+then run with: ./myscript.sh or path/to/myscript.sh
+
+### SNAPS-OS Script Patterns
+
+SNAPS-OS scripts commonly use:
+- fzf for interactive menus (fzf --layout=reverse --preview ...)
+- mmsg for mango IPC (mmsg dispatch ...)
+- dms ipc call for DMS IPC (dms ipc call spotlight toggle)
+- notify-send for desktop notifications
+- state files in ~/.config for persistent settings
+
+### Example: Simple Keybind Script
+
+#!/bin/bash
+# toggle between two wallpapers
+
+CURRENT=$(cat ~/.config/wallpaper.state)
+if [ "$CURRENT" = "dark" ]; then
+    echo "light" > ~/.config/wallpaper.state
+    dms ipc call wallpaper set ~/wallpapers/light.jpg
+else
+    echo "dark" > ~/.config/wallpaper.state
+    dms ipc call wallpaper set ~/wallpapers/dark.jpg
+fi

@@ -1,0 +1,42 @@
+> Basic File Modification in the Terminal
+
+Modifying files and directories is a fundamental skill. SNAPS-OS includes micro and nano for editing, plus standard commands for creating, copying, moving, and deleting.
+
+### Creating Files and Directories
+
+`mkdir <dirname>`: creates a new directory.
+`mkdir -p <path/to/dir>`: creates nested directories (creates parents too).
+
+`touch <filename>`: creates an empty file or updates an existing file's timestamp.
+
+### Copying and Moving
+
+`cp <source> <destination>`: copies a file.
+`cp -r <source> <destination>`: copies directories recursively.
+use wildcard (*) to copy multiple files: `cp -r projects/* ~/backups/`
+
+`mv <source> <destination>`: moves or renames a file/directory.
+combine rename and move: `mv oldname.txt ~/documents/newname.txt`
+
+### Deleting
+
+`rm <filename>`: deletes a file (hard delete, not recoverable).
+`rm -r <dirname>`: deletes a directory and all contents recursively.
+`rmdir <dirname>`: deletes an empty directory only.
+
+be careful with rm - it performs a hard delete.
+
+### Editing Files
+
+`micro <filename>`: modern, user-friendly editor. saves with ctrl+S, quits with ctrl+Q.
+micro is the default editor used in SNAPS-OS scripts.
+
+`nano <filename>`: simple classic editor. saves with ctrl+O, quits with ctrl+X.
+
+### Writing to Files
+
+`echo "text" > file.txt`: overwrites file with text (creates if missing).
+`echo "text" >> file.txt`: appends text to file.
+
+`command | tee file.txt`: writes output to file AND displays in terminal.
+`command | tee -a file.txt`: appends to file.

@@ -1,0 +1,58 @@
+> Basic Navigation in the Terminal
+
+SNAPS-OS comes pre-configured with eza, zoxide and fzf to help with navigation.
+
+eza and zoxide replace ls and cd respectively. fzf gives fuzzy finding integration.
+
+when you spawn a terminal, you'll see something like:
+
+     ~
+
+this is prettified using powerlevel10k, and shows your *current* directory.
+
+you can also get the current directory using the command `pwd` (print working directory)
+
+by default, this is your home directory, which has `~` as a shorthand.
+the longform is /home/yourusername.
+
+some scripts and commands won't like using ~, so you need to use the full path
+(for example, this is important with the `ln` command for symlinks)
+in this case, use $(whoami) for username-agnostic paths.
+
+to list files in the current directory, type `ls`
+
+this uses eza under the hood and gives you a line-by-line output with icons.
+
+the lines will look something like:
+drwxr-xr-x     - den 24 may 23:57   test
+
+here's what each thing means:
+drwxr-xr-x - permissions string
+- - file size (not shown for directories)
+den - the account that owns the file
+24 may 23:57 - last modified time
+name - the filename with icon
+
+symlinks appear as:
+lrwxrwxrwx     - den 12 apr 05:04   .vscode -> /home/den/.vscode-oss
+
+to move into a directory, use `cd <dirname>`
+
+cd uses zoxide under the hood, which gives fuzzy finding for visited directories.
+instead of `cd /home/den/ownCloud/ArchConfig/MangoScripts`, you can run `cd mangoscripts`
+if that's the best match for what you've visited.
+
+path syntax:
+~ - shorthand for /home/yourusername
+. - current working directory
+.. - one directory up
+... - two directories up
+.... - three directories up
+
+examples:
+`cd dir` - relative to current directory
+`cd ~/dir` - absolute from home
+`cd ./dir` - explicit current dir
+`cd /dir` - absolute from root
+`cd ../dir` - one up, then into dir
+`cd sub` - zoxide fuzzy match

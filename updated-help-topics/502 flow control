@@ -1,0 +1,115 @@
+> Flow Control
+
+Bash conditionals and loops for SNAPS-OS scripting.
+
+### if/then/elif/fi
+
+if [ condition ]; then
+    # do something
+elif [ other_condition ]; then
+    # do something else
+else
+    # fallback
+fi
+
+note: spaces around [ and ] are required.
+
+### Test Operators
+
+File tests:
+-f <file>: true if file exists and is a regular file
+-d <dir>: true if directory exists
+-e <path>: true if path exists
+-s <file>: true if file exists and is non-empty
+-r/-w/-x <file>: true if file is readable/writable/executable
+
+String tests:
+[ "$a" = "$b" ]: string equality (use =, not ==)
+[ "$a" != "$b" ]: string inequality
+[ -z "$a" ]: true if string is empty
+[ -n "$a" ]: true if string is non-empty
+
+Numeric tests:
+[ "$a" -eq "$b" ]: equal
+[ "$a" -ne "$b" ]: not equal
+[ "$a" -gt "$b" ]: greater than
+[ "$a" -lt "$b" ]: less than
+
+### Combining Conditions
+
+[ condition1 ] && [ condition2 ]: AND
+[ condition1 ] || [ condition2 ]: OR
+[ ! condition ]: NOT
+
+### For Loops
+
+iterate over a list:
+
+for item in one two three; do
+    echo "$item"
+done
+
+iterate over files:
+
+for file in ~/projects/*; do
+    echo "found: $file"
+done
+
+iterate over numbers:
+
+for i in {1..5}; do
+    echo "number $i"
+done
+
+### While Loops
+
+read a file line by line:
+
+while IFS= read -r line; do
+    echo "line: $line"
+done < ~/somefile.txt
+
+infinite loop with break:
+
+while true; do
+    read -p "enter q to quit: " input
+    [ "$input" = "q" ] && break
+done
+
+### Case Statements
+
+case "$var" in
+    start)
+        echo "starting..."
+        ;;
+    stop)
+        echo "stopping..."
+        ;;
+    restart|reload)
+        echo "restarting..."
+        ;;
+    *)
+        echo "unknown command"
+        ;;
+esac
+
+### Practical SNAPS-OS Examples
+
+Checking if a file exists (common in SNAPS-OS scripts):
+
+#!/bin/bash
+STATE=~/.config/snapsos/wallpaper.state
+if [ -f "$STATE" ]; then
+    CURRENT=$(cat "$STATE")
+else
+    CURRENT="default"
+fi
+echo "Current wallpaper group: $CURRENT"
+
+Looping through state files:
+
+for state in ~/.config/snapsos/state/*.state; do
+    [ -f "$state" ] || continue
+    name=$(basename "$state" .state)
+    echo "State for $name: $(cat "$state")"
+done

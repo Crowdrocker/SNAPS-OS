@@ -1,0 +1,140 @@
+/* Matugen Obsidian Dynamic Colors Snippet
+ * Place output in: <vault>/.obsidian/snippets/matugen.css
+ * Then enable it in: Settings → Appearance → CSS Snippets
+ */
+
+.theme-dark, .theme-light {
+
+    /* ── Material You RGB helpers ──────────────────────────── */
+    --mat-bg-rgb:             13, 20, 28;
+    --mat-surface-rgb:        13, 20, 28;
+    --mat-on-surface-rgb:     221, 227, 238;
+    --mat-primary-rgb:        155, 202, 255;
+    --mat-on-primary-rgb:     0, 50, 86;
+
+    /* ── Core Backgrounds ──────────────────────────────────── */
+    --background-primary:           #0d141c;
+    --background-primary-alt:       #0d141c;
+    --background-secondary:         #151c24;
+    --background-secondary-alt:     #192028;
+
+    /* ── Titlebar ──────────────────────────────────────────── */
+    --titlebar-background:          #0d141c;
+    --titlebar-background-focused:  #151c24;
+    --titlebar-text-color:          #dde3ee;
+
+    /* ── Borders & Dividers ────────────────────────────────── */
+    --background-modifier-border:         #414750;
+    --background-modifier-border-focus:   #8b919b;
+    --background-modifier-border-hover:   #8b919b;
+
+    /* ── Text Colors ───────────────────────────────────────── */
+    --text-normal:      #dde3ee;
+    --text-muted:       #c0c7d2;
+    --text-faint:       #8b919b;
+    --text-on-accent:   #003256;
+    --text-selection:   rgba(155, 202, 255, 0.25);
+
+    /* ── Accent & Interactive ──────────────────────────────── */
+    --interactive-accent:           #9bcaff;
+    --interactive-accent-hover:     #00497a;
+    --interactive-accent-rgb:       155, 202, 255;
+    --text-accent:                  #9bcaff;
+    --text-accent-hover:            #00497a;
+
+    /* ── Hover & Active Modifiers ──────────────────────────── */
+    --background-modifier-hover:          rgba(var(--mat-on-surface-rgb), 0.06);
+    --background-modifier-active-hover:   rgba(var(--mat-primary-rgb), 0.15);
+    --background-modifier-success:        #3e4372;
+    --background-modifier-error:          #93000a;
+    --background-modifier-error-hover:    #ffb4ab;
+
+    /* ── Obsidian Color Scale (--color-base-XX) ────────────── */
+    --color-base-00:    #0d141c;
+    --color-base-05:    #0d141c;
+    --color-base-10:    #080f16;
+    --color-base-20:    #151c24;
+    --color-base-25:    #192028;
+    --color-base-30:    #242b33;
+    --color-base-35:    #2f353e;
+    --color-base-40:    #414750;
+    --color-base-50:    #8b919b;
+    --color-base-60:    #c0c7d2;
+    --color-base-70:    #dde3ee;
+    --color-base-100:   #dde3ee;
+
+    /* ── Semantic Colors ───────────────────────────────────── */
+    --color-red:        #ffb4ab;
+    --color-orange:     #bfc2fa;
+    --color-yellow:     #b8c6ea;
+    --color-green:      #3e4372;
+    --color-cyan:       #394664;
+    --color-blue:       #9bcaff;
+    --color-purple:     #b8c6ea;
+    --color-pink:       #bfc2fa;
+
+    /* ── Headings ──────────────────────────────────────────── */
+    --h1-color:     #9bcaff;
+    --h2-color:     #9bcaff;
+    --h3-color:     #b8c6ea;
+    --h4-color:     #bfc2fa;
+    --h5-color:     #c0c7d2;
+    --h6-color:     #8b919b;
+
+    /* ── Links ─────────────────────────────────────────────── */
+    --link-color:           #9bcaff;
+    --link-color-hover:     #d0e4ff;
+    --link-external-color:  #bfc2fa;
+    --link-unresolved-color: #8b919b;
+
+    /* ── Tags ──────────────────────────────────────────────── */
+    --tag-color:            #d0e4ff;
+    --tag-background:       #00497a;
+    --tag-border-color:     #9bcaff;
+    --tag-color-hover:      #003256;
+    --tag-background-hover: #9bcaff;
+
+    /* ── Checkboxes ────────────────────────────────────────── */
+    --checkbox-color:           #9bcaff;
+    --checkbox-color-hover:     #00497a;
+    --checkbox-border-color:    #8b919b;
+    --checkbox-marker-color:    #003256;
+
+    /* ── Code Blocks ───────────────────────────────────────── */
+    --code-background:  #151c24;
+    --code-normal:      #dde3ee;
+    --code-comment:     #8b919b;
+    --code-function:    #9bcaff;
+    --code-important:   #ffb4ab;
+    --code-keyword:     #b8c6ea;
+    --code-operator:    #bfc2fa;
+    --code-property:    #c0c7d2;
+    --code-punctuation: #414750;
+    --code-string:      #bfc2fa;
+    --code-tag:         #ffb4ab;
+    --code-value:       #b8c6ea;
+
+    /* ── Scrollbar ─────────────────────────────────────────── */
+    --scrollbar-thumb-bg:           rgba(var(--mat-on-surface-rgb), 0.12);
+    --scrollbar-active-thumb-bg:    rgba(var(--mat-on-surface-rgb), 0.25);
+    --scrollbar-bg:                 transparent;
+
+    /* ── Inputs ────────────────────────────────────────────── */
+    --input-shadow: none;
+    --input-shadow-hover: 0 0 0 2px #8b919b;
+
+    /* ── Graph View ────────────────────────────────────────── */
+    --graph-node:           #9bcaff;
+    --graph-node-unresolved: #8b919b;
+    --graph-node-focused:   #d0e4ff;
+    --graph-node-tag:       #b8c6ea;
+    --graph-node-attachment: #bfc2fa;
+    --graph-line:           #414750;
+    --graph-background:     #0d141c;
+
+}
+
+/* ── Active line highlight ─────────────────────────────────── */
+.cm-active {
+    background-color: rgba(var(--mat-on-surface-rgb), 0.03) !important;
+}

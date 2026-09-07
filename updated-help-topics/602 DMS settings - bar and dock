@@ -1,0 +1,47 @@
+> DMS Settings - Bar and Dock
+
+In-depth guide to DMS bar and dock settings (super+S > dank bar, dock and launcher).
+
+### Bar Position
+
+choose which bars are active: top bar, bottom bar, status bar, side bar.
+each bar has its own configuration for widgets and appearance.
+
+SNAPS-OS comes with 4 pre-configured bars that can be toggled via *super+shift+D*.
+you can combine multiple bars (e.g. top bar + bottom bar).
+
+### Autohide
+
+bars can be set to autohide. configure:
+autohide delay: how long to wait before hiding.
+autohide sensitivity: how close to the edge to trigger show.
+autohide height: pixels of edge area that triggers show.
+
+### Bar Widgets
+
+each bar can show these widgets:
+
+launcher: app launcher button (top-left menu).
+clock: date and time display (configurable format).
+system tray: notification area for background apps.
+workspace: workspace/tag indicator and switcher.
+media: now-playing media player widget.
+notifications: notification indicator and history.
+system stats: CPU, RAM, network usage.
+quick settings: brightness, volume, network toggles.
+weather: current weather display.
+dash button: quick access to the dash panel.
+
+### Dock Behavior
+
+dock position: bottom, left, or right edge.
+dock autohide: similar to bar autohide settings.
+dock icon size: small, medium, large.
+dock pinned apps: apps that always appear in the dock.
+dock running indicators: show which apps are running.
+dock smart hiding: hide when a window overlaps it.
+
+### Icon Settings
+
+icon theme: currently set to tela-circle-icon-theme-black.
+icon size preferences for both bar and dock.

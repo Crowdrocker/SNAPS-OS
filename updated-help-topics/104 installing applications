@@ -1,0 +1,42 @@
+> Installing Applications
+
+### Installing with Shelly
+
+step 1: open Shelly
+from the runner (*SUPER+SPACE*), *SUPER+Y*, or the button in the top bar.
+
+step 2: set up Shelly (first launch only)
+pick which repositories to use. pacman + AUR recommended, flatpak optional.
+
+step 3: select repository
+tabs for pacman, AUR, and flatpak. use in this order.
+
+prefer pacman for all software unless it isn't available there.
+use AUR if pacman doesn't have it. -git versions build from source, -bin versions are prebuilt.
+flatpak is the last option. use flatseal to manage permissions.
+
+### Installing with Unipkg TUI
+
+press *super+shift+Y* or run `unipkg launch-tui`
+
+select install, then your package manager of choice.
+searchable list with package info. multi-select with *tab*, enter to install.
+
+also works from CLI: `unipkg install any <packagename>`
+this tries all package managers in the order listed in ~/.config/unipkg/unipkg.conf
+
+### Installing with Pacman Directly
+
+`sudo pacman -S <package>`
+
+### Installing from the AUR
+
+SNAPS-OS comes with yay as its AUR helper.
+
+`yay -S <packagename>`
+
+### Best Practice
+
+1. check pacman first (most stable, well-integrated)
+2. if not found, check AUR (more software, less moderated)
+3. if neither works, use flatpak (sandboxed, cross-platform)

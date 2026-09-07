@@ -1,0 +1,60 @@
+> Customizing DMS
+
+this page goes over customizing DMS using the settings menu. because much of the settings menu is either self-explanatory or has good explanations, this serves as a reference for parts that are not immediately obvious.
+
+you can open settings from the bar or by pressing *super+S*
+
+### Personalization
+
+the wallpaper settings can be modified using the wallpaper script (*super+W*).
+this changes the set wallpaper. turning on per-mode or per-monitor wallpapers here
+will prevent the script from working properly.
+
+for color settings, colors are derived from the top section of theme and colors.
+auto uses matugen (Material You color generation), different templates give different
+results for colors - it's recommended to play around with each.
+
+matugen templates are used to apply the color scheme to other programs.
+DMS comes with templates for many applications including:
+agents (ags), fuzzel, GTK3, GTK4, Hyprland, KDE, and 58+ templates via InioX:
+alacritty, btop, cava, clipse, dunst, firefox, ghostty, gtk, helix, heroic,
+hyprland, hyprwat, kitty, kvantum, labwc, mako, mango, matugen (obt), mcfly,
+micro, midnight-discord, neovim, niri, obsidian, opencode, prismlauncher,
+pywalfox, qtct, quickshell, rmpc, rofi, spicetify, starship, steam, sway,
+telegram, television, terminal-sequences, tmux, vivaldi, wezterm, windows_term,
+wine, yazi, zathura, zed, zellij, and more.
+
+all templates are enabled by default, so outside of software that needs manual
+configuration (firefox, vesktop and vscode), it should work by default.
+
+instructions for manual themes: https://danklinux.com/docs/dankmaterialshell/application-themes
+
+for vesktop: enable the theme under vencord theme settings, then change your theme
+(toggle light mode on/off) to make it update.
+
+if GTK or QT applications are not being themed properly, click the fix button
+at the bottom of the themes and colors page.
+
+### Dank Bar
+
+SNAPS-OS comes with 4 pre-configured bars: full top bar, bottom bar, top status bar,
+and side bar. you can tweak these however you wish.
+
+### Workspaces
+
+affects the workspaces/tags display in your top bar.
+
+### Keyboard Shortcuts
+
+interacts with your mango config. you can see all current binds, add new ones
+(which are saved to ~/.config/mango/dms/binds.conf, including overwrites).
+
+### GTK/QT Theming
+
+GTK and QT theming requirements are pre-installed (adw-gtk-theme, qt6ct-kde).
+use the fix button at the bottom of themes page if theming isn't working.
+
+### Vesktop/VSCode Manual Theme
+
+vesktop: enable in vencord theme settings, then toggle theme to refresh.
+VSCode/code-oss: may need manual theme enablement.

@@ -1,0 +1,93 @@
+> Using SNAPS-OS Functions
+
+## TLDR TUI
+
+call using *SUPER+H* or the alias `tldrtui`
+
+use mouse or arrow keys. type to search.
+
+pressing enter or double-clicking an entry opens the man page.
+
+pressing q on the manpage returns to the main menu.
+
+to exit, press *SUPER+Q* to close the terminal.
+
+## Help TUI
+
+call using *SUPER+SHIFT+H* or the alias `helptui`
+
+use arrow keys or mouse to navigate, type to search.
+
+enter refreshes the menu.
+
+to exit, press *SUPER+Q*.
+
+## Mango Config Editor
+
+press *SUPER+M* or run `mangoconf`
+
+shows a menu listing config files in ~/.config/mango with a preview on the right.
+
+press enter on a file to open it in micro.
+
+in micro, use ctrl+s to save and ctrl+q to quit.
+
+then reload mango config with *SUPER+R*.
+
+## Project Selector
+
+uses a state file at ~/.config/projectdir.state to determine which directory to scan.
+
+default directory is ~/projects. to change:
+`echo "my-projects/subdir" > ~/.config/projectdir.state`
+
+only displays git repositories.
+
+open with *SUPER+SHIFT+TAB* or the alias `git-projects`
+
+left side shows full repo paths, right side shows file listing and readme.
+
+pressing enter opens the repo in code-oss.
+
+## Layout Switcher
+
+open with *SUPER+SHIFT+W*
+
+arrow keys to browse, enter to select.
+
+affects only your current view on the active monitor.
+
+reset to dwindle by pressing *SUPER+R*.
+
+## Documentation Menu
+
+open with the alias `documentation` or *SUPER+SHIFT+M*
+
+provides quick access to documentation sites in firefox and searchable quick reference menus.
+
+## Wallpaper Switcher
+
+open with *SUPER+W*, shows directories in ~/.config/snapsos/wallpapers
+
+each directory can contain any number of images (cycled through). one image = no cycling.
+
+cycle forward/back with *alt+W* and *shift+alt+W*.
+
+## Bar Presets
+
+open with *SUPER+SHIFT+D*, allows toggling pre-included bars and dock, including combination presets.
+
+## Tips
+
+shown automatically on first terminal session, also via `tipme` command.
+
+press *SUPER+0* to get a tip in notifications.
+
+## Package TUIs
+
+Pacman GUI: `pacgui` (alias, no default keybind)
+AUR GUI: `aurgui` (alias, no default keybind)
+
+Both use FZF with multi-select via tab. Search, tab to select, enter to install.
+
+Always prefer pacman repositories first, then AUR, then flatpak.

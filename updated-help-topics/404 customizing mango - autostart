@@ -1,0 +1,37 @@
+> Customizing Mango - Autostart
+
+Autostart configuration is in ~/.config/mango/autostart.conf
+
+### exec-once vs exec
+
+`exec-once`: runs once when mango starts (not on config reload).
+`exec`: runs every time the config is reloaded (*super+R*).
+
+### SNAPS-OS Pre-configured Autostart
+
+exec-once entries (in order):
+
+1. xdg-desktop-portal: portal service for file dialogs and screen sharing.
+2. tldr --update: updates the TLDR command database.
+3. dsearch serve: file indexer for DMS search, indexes ~ recursively (excludes hidden).
+4. hyprpolkitagent: polkit authentication agent.
+5. ~/.config/snapsos/firstrun.sh: first-run setup UI.
+6. nautilus --gapplication-service: file manager background service.
+7. dcal run -d --hidden: Dank Calendar daemon in background.
+8. ~/.config/snapsos/wayshell/wayshell.sh: wayshell daemon for screenshot/OSD.
+9. opentabletdriver: tablet driver service.
+10. dms run: launches Dank Material Shell.
+11. ghostty: pre-opens a terminal window.
+12-14. toggle_named_scratchpad x3: pre-loads the terminal scratchpad on primary display
+    (staggered at 2.5s, 3s, 3.5s delays).
+
+### Adding Your Own
+
+add apps you want on startup:
+exec-once=path/to/your/app
+exec-once=firefox (example)
+
+for commands that should run on every reload:
+exec=notify-send "config reloaded"
+
+note: all paths use ~/.config/snapsos/... for SNAPS-OS scripts.

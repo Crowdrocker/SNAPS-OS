@@ -1,0 +1,75 @@
+> DMS Settings - System and Plugins
+
+In-depth guide to DMS system settings and plugin management (super+S > system, plugins).
+
+### Audio
+
+output device: select default speaker/headphones.
+input device: select default microphone.
+volume levels: set default volumes.
+audio profiles: switch between audio configurations.
+
+### Clipboard Manager
+
+clipboard history size: number of entries to keep.
+clipboard persistence: keep clipboard contents after application closes.
+image clipboard: enable/disable image clipboard support.
+invoked with *super+V* or bar widget.
+
+### Multiplexer/Tiling
+
+mangoWM tiling settings accessible from DMS:
+layout switching behavior.
+window gap preferences (syncs with decoration.conf).
+focus follows mouse behavior.
+
+### Network
+
+wifi: scan and connect to networks.
+ethernet: manage wired connections.
+VPN: add and manage VPN connections.
+connection priority: order of preferred networks.
+
+### Bluetooth
+
+bluetooth on/off toggle.
+pair new devices.
+manage paired devices.
+file transfer over bluetooth.
+
+### Displays
+
+graphical display configuration:
+monitor layout (position, arrangement).
+resolution and refresh rate per monitor.
+fractional scaling per monitor.
+mirror/extend display modes.
+
+### Power/Sleep
+
+screen blank timeout.
+suspend/idle timeout.
+power button behavior.
+sleep inhibit toggle (bound to *super+I*).
+
+### Lock Screen
+
+lock screen style and timeout.
+lock on sleep/wake.
+manual lock with *super+L*.
+screen saver settings.
+
+### Plugin Management
+
+DMS supports plugins to extend functionality.
+
+available plugins include:
+FlatpakUpdates: automatic flatpak update notifications.
+
+to install plugins:
+1. go to settings > plugins.
+2. browse available plugins.
+3. click install on desired plugins.
+4. enabled plugins activate automatically.
+
+custom plugins can be added to ~/.config/dms/plugins/

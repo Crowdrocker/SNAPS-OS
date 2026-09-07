@@ -1,0 +1,103 @@
+> Other Menus
+
+DMS and SNAPS-OS have a variety of menus, here's an overview of them and how you can access them
+
+## Runner
+accessed with *SUPER+SPACE* or the button on the top left of the bar.
+
+in apps mode, launch applications. in search mode, search /home directory.
+plugins include settings search (start search with "?").
+
+## Keybinds
+accessed with *SUPER+K*
+
+searchable overview of all keybinds from ~/.config/mango/binds.conf
+
+## Clipboard History
+accessed with *SUPER+V* or a bar widget
+
+view clipboard history and load any entry back to clipboard
+
+## Process List
+accessed with *SUPER+X* or bar widgets
+
+task manager: view, search and kill processes, monitor CPU/RAM/disk usage.
+also shows system info (kernel, hostname, CPU, GPU).
+
+## Dash
+accessed through bar widgets
+
+calendar, metrics, media player, wallpaper selector, weather and settings access
+
+## Notifications
+accessed with *SUPER+SHIFT+N*, notifications widget or control center
+
+notification history, current notifications, do not disturb toggle, notification settings
+
+## Control Center
+accessed with *SUPER+ESCAPE* or bar widget
+
+quick access to wifi, bluetooth, audio, theming, settings and power controls
+
+## Power Menu
+accessed with *SUPER+Z* or bar widget
+
+reboot, shut down, sleep
+
+## Notepad
+toggled with *SUPER+N* or bar widget
+
+simple space to keep quick notes
+
+## Command Help
+spawned with *SUPER+H*
+
+searchable list of basic commands with TLDR overviews; enter opens the man page
+
+## Full Help
+this menu! spawned with *SUPER+SHIFT+H*
+
+## Package Installer
+spawned with *SUPER+Y* (shelly)
+
+search pacman, AUR and optionally flatpak repositories
+
+## Unipkg Installer
+spawned with *SUPER+SHIFT+Y*
+
+package-manager-agnostic TUI wrapper
+
+## Mango Config Editor TUI
+spawned with *SUPER+M*
+
+list of mango config files with preview; enter opens in micro
+
+## Mango Config Explainer TUI
+spawned with *SUPER+ALT+M*
+
+browse config files line by line with descriptions
+
+## Layout Switcher
+spawned with *SUPER+SHIFT+W*
+
+switch between mangoWM layouts
+
+## Wallpaper Switcher
+spawned with *SUPER+W*
+
+select wallpaper groups
+
+## Bar Switcher
+spawned with *SUPER+SHIFT+D*
+
+switch bar layouts and toggle individual components
+
+## Documentation
+spawned with *SUPER+SHIFT+M*
+
+quick access to reference lists and documentation links
+
+## Project Selector
+spawned with *SUPER+SHIFT+TAB*
+
+browse and open git projects from ~/projects

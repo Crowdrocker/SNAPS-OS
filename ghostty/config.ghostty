@@ -1,0 +1,30 @@
+theme = dankcolors
+
+background-opacity = 0.5
+
+command = /bin/zsh
+
+initial-command = /bin/zsh -c ~/.config/snapsos/fastfetch/fetch.sh && echo "" && ~/.config/snapsos/tips/tips.sh && echo "[SNAPS-OS Tips]: use the 'tipme' command for random tips" && echo "[SNAPS-OS Tips]: 'alltips' to see all tips in a searchable interface" && echo "[SNAPS-OS Tips]: 'tipme toggle' to toggle between normal mode and cowsay mode" && echo "[SNAPS-OS Tips]: or the SUPER+0 keybind to be notified of a random tip" && zsh
+
+scrollback-limit = 1048576000
+
+link-url = true
+link-previews = true
+
+window-decoration = none
+
+focus-follows-mouse = true
+
+shell-integration = zsh
+
+window-inherit-working-directory = false
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+
+
+
+keybind = alt+up=new_split:up
+keybind = alt+down=new_split:down
+keybind = alt+left=new_split:left
+keybind = alt+right=new_split:right
+keybind = ctrl+r=reload_config

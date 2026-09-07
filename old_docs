@@ -1,0 +1,72 @@
+Old documentation files (outside docs/)
+========================================
+
+Root (4)
+  README.md
+  SCRIPTS.md
+  TODO.md
+  MATUGEN.md
+
+snapsos/vox/ (2)
+  README.md
+  CONCEPT.md
+
+snapsos/glyphs/ (1)
+  README.md
+
+snapsos/wayshell/ (1)
+  DEPENDENCIES.md
+
+snapsos/tuis/ (2)
+  documentation.list
+  documentation.sh
+
+snapsos/help/ (8)
+  help.sh
+  cmd-help.sh
+  references.sh
+  references.list
+  cmds.list
+  DMSipc.list
+  mangodispatchers.list
+  mangoipc.list
+
+snapsos/help/topics/ (25)
+  000 welcome
+  001 SNAPS-OS included software
+  002 SNAPS-OS Included utility scripts
+  003 SNAPS-OS important keybinds
+  004 using SNAPS-OS functions
+  101 accessing the settings menu
+  102 overview of other menus
+  103 window management
+  104 installing applications
+  105 layouts
+  201 basic navigation in the terminal
+  202 basic file modification in the terminal
+  203 basic terminal utilities
+  204 text modification and filtering
+  205 terminal piping
+  206 file permissions
+  207 additional useful terminal functions
+  301 customizing DMS
+  401 customizing mango - layouts
+  402 customizing mango - binds
+  403 customizing mango - decoration
+  404 customizing mango - autostart
+  405 customizing mango - monitors
+  501 scripting basics
+  502 flow control
+
+matugen/templates/ (3)
+  wallpaper.txt     (template, not prose)
+  kde/color.txt     (template, not prose)
+  InioX/source.txt  (template, not prose)
+
+matugen/templates/InioX/neovim/ (1)
+  README.md
+
+matugen/templates/InioX/rmpc/nix-hm-example/ (1)
+  README.md
+
+Total: 46 files

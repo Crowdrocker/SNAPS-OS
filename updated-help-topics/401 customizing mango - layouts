@@ -1,0 +1,61 @@
+> Customizing Mango - Layouts
+
+Layout configuration is in ~/.config/mango/layouts.conf
+
+### Circle Layout
+
+`circle_layout=dwindle,scroller,vertical_scroller,center_tile,tile`
+defines the order for *super+shift+A* (cycle layouts).
+
+### Tab Bar
+
+`tab_bar_height = 0`: height of window tab bar (0 = hidden).
+
+### Scratchpad
+
+`scratchpad_cross_monitor=1`: allow scratchpad to work across monitors.
+
+### Scroller Settings
+
+`scroller_structs=20`: number of slot structures in scroller.
+`scroller_default_proportion=0.8`: default window width as fraction of monitor.
+`scroller_focus_center=0`: don't center focused window.
+`scroller_prefer_center=0`: don't prefer centering.
+`edge_scroller_pointer_focus=1`: focus follows mouse at edges.
+`scroller_default_proportion_single=1.0`: single window fills monitor.
+`scroller_proportion_preset=0.15,0.3,0.5,0.8,1.0`: ratios cycled by *super+A*.
+
+### Master/Stack (Tile) Settings
+
+`new_is_master=1`: new windows become master.
+`default_mfact=0.75`: master area ratio (75% of screen).
+`default_nmaster=1`: number of master windows.
+`smartgaps=0`: disable smart gaps when only one window.
+`center_when_single_stack=0`: don't center single stack window.
+`center_master_overspread=1`: center master window when it overspreads.
+
+### Overview Settings
+
+`hotarea_size=15`: corner trigger size in pixels.
+`enable_hotarea=1`: enable hot corner for overview.
+`hotarea_corner=0`: top-left corner (0=TL, 1=TR, 2=BL, 3=BR).
+`ov_tab_mode=1`: tab-based overview cycling.
+`overviewgappi=5`: inner gap between windows in overview.
+`overviewgappo=30`: outer gap around overview.
+
+### Dwindle Settings
+
+`dwindle_split_ratio=0.5`: 50/50 split ratio.
+`dwindle_smart_split=0`: disable smart splitting.
+`dwindle_hsplit=0`: force horizontal splitting.
+`dwindle_vsplit=0`: force vertical splitting.
+`dwindle_preserve_split=1`: preserve split direction.
+`dwindle_smart_resize=0`: disable smart resize.
+`dwindle_drop_simple_split=0`: disable simple drop split.
+
+### Tag Layout Rules
+
+set default layouts per workspace/tag:
+tagrule=id:1,layout_name:dwindle,
+tagrule=id:2,layout_name:dwindle,
+etc. (all 9 tags default to dwindle)

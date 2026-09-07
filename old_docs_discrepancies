@@ -1,0 +1,317 @@
+Old docs discrepancies (outdated / incorrect claims)
+====================================================
+
+---
+
+README.md (root)
+----------------
+
+1. Line 3: "mangoWC" — should be "mangoWM" (deprecated name; install.sh uses mangowm-git)
+
+2. Lines 59, 61: `$(Whoami)` with capital W — should be `$(whoami)`.
+   Bash is case-sensitive; this command would fail.
+
+3. Line 153: `adwsteamgtk` listed inside `sudo pacman -Syu` block.
+   It is an AUR package — installed via `yay -S`, NOT pacman.
+   install.sh line 7 correctly has it under yay.
+
+4. Lines 100–139 "needed software": missing several packages that
+   install.sh actually installs:
+   - shelly, yazi, cava, btop, code, jp2a, tela-circle-icon-theme-black,
+     adw-gtk-theme (listed twice), adwsteamgtk (listed under AUR)
+
+5. Line 8: "auto-update" listed as a custom feature — there is no
+   auto-update daemon or timer, only a manual `update.sh` script.
+
+---
+
+SCRIPTS.md (root)
+-----------------
+
+6. Line 72: Claims wallpaper.conf "does not support commenting".
+   DMS wallpaper.conf files use a key=value format. Need to verify
+   whether inline comments (`#`) are actually supported by DMS.
+   (Minor — the doc says to remove comments.)
+
+---
+
+TODO.md (root)
+--------------
+
+7. All entries reference unintegrated upstream projects
+   (msnap, mango-ext, mango-layout-switcher, mdisplay, mlint).
+   None appear to be integrated. This file is a wishlist, not
+   documentation — no factual discrepancies.
+
+---
+
+MATUGEN.md (root)
+-----------------
+
+8. Line 4: Says templates are in `~/.config/matugen/templates/InioX`.
+   The source repo puts them at `matugen/templates/InioX/` — the
+   install script copies `matugen/` to `~/.config/matugen/`, so
+   they should end up at `~/.config/matugen/templates/InioX/`.
+   (Correct as described.)
+
+9. Lines 7–19: Lists btop, cava, clipse, micro, prismlauncher,
+   spotify (spicetify), tmux, yazi, steam (adwaita), obsidian as
+   "set up to generate". Should verify each has a working
+   template in the current matugen config.toml. (Could not fully
+   verify without running matugen; template files exist.)
+
+10. Line 41: obsidian instructions say to symlink
+    `~/.config/matugen/templates-out/obsidian.css` — verify that
+    the output path in config.toml matches.
+
+---
+
+snapsos/vox/README.md
+-------------------
+
+11. Line 7: "Offline STT — Vosk speech recognition"
+    → The actual runtime uses `whisper-server` (via
+    `whisper_recognizer.py`). Vosk is dead code.
+
+12. Line 8: "Three action types — exec, shell_exec, type"
+    → There is also no-action / branch type, and the config
+    UI supports more node types. The list is incomplete.
+
+13. Line 17: "On Arch Linux you can also install vosk directly
+    via pacman: sudo pacman -S vosk-api python-vosk"
+    → Vosk is no longer used. The correct dep would be
+    whisper-cpp-vulkan (or gst-plugin-whisper) for the
+    whisper-server binary.
+
+14. Line 28: "transcribes continuously via Vosk"
+    → Should be "whisper-server".
+
+15. Lines 229–236 (Dependencies table):
+    "Speech-to-text | vosk | vosk-api + python-vosk | pip install vosk"
+    → Should reference whisper-cpp-vulkan / whisper-server.
+    The table is entirely stale.
+
+16. Line 244: "models/  # Vosk model files"
+    → The models/ directory stores the whisper model
+    (ggml-medium.en.bin), not Vosk models.
+
+17. Line 251: `recognizer.py` listed as "Vosk STT + wake word
+    detection". This file is dead code — the actual recognizer
+    is `whisper_recognizer.py` (used by `daemon.py`).
+
+18. File structure listing (lines 239–257): missing entries:
+    - `whisper_recognizer.py` (the actual STT module)
+    - `models.py` (if it exists)
+    The list should match the actual module files.
+
+---
+
+snapsos/vox/CONCEPT.md
+--------------------
+
+19. Line 6: "Vosk speech recognition, runs locally"
+    → Conceptual doc for the original plan. Mentions Vosk
+    because that was the original plan. Not a factual error
+    per se, but does not reflect the current whisper-based
+    implementation.
+
+---
+
+snapsos/glyphs/README.md
+----------------------
+
+20. Lines 222–223: "12 equispaced rotations (every 30°)".
+    Code in `geometry.py` uses 12 rotations at 15° steps
+    (0°, 15°, 30°, ..., 165°). Δ = 15°, not 30°.
+    (Already fixed in docs/dev/glyphs.md.)
+
+21. Lines 33–35: Keybinding table says SUPER+SHIFT+G for
+    record mode. The mango keybindings use SUPER+SHIFT+J
+    for swap workspace, and SUPER+G for glyphs (normal mode).
+    Verify actual keybind in binds.conf; earlier analysis
+    found SUPER+SHIFT+G conflicts with glyphs record.
+
+22. Line 353: "60+ predefined glyphs" — actual count in
+    glyphs-data/ is 71. Underselling, but not wrong per se.
+
+---
+
+snapsos/wayshell/DEPENDENCIES.md
+------------------------------
+
+23. Lists `obs-studio` — OBS Studio is not used or invoked
+    by any wayshell script. Stale/incorrect entry.
+
+24. Lists `pavucontrol` — no wayshell script calls
+    pavucontrol; volume control uses `wpctl`. Stale entry.
+
+25. Lists `python3` — all wayshell scripts are pure bash,
+    no python3 usage. Incorrect.
+
+26. Lists `waybar` — wayshell does not launch waybar directly;
+    monocle does. wayshell's elevated and focused daemons
+    pkill waybar and ask mmsg to spawn_shell it, but waybar
+    is not a dependency in the traditional sense.
+    Arguably a runtime dependency.
+
+27. Lists `wireplumber` — the scripts call `wpctl`, which
+    ships with `wireplumber`. Correct.
+
+28. Missing dependencies used by ss-capture.sh and other
+    config scripts:
+    - `mmsg` (mangoWM IPC)
+    - `satty` (screenshot editor)
+    - `notify-send` (libnotify)
+    - `pkill` / `pgrep` / `killall` (procps-ng is listed,
+      but these specific commands are not mentioned)
+
+---
+
+snapsos/help/topics/ (help system)
+--------------------------------
+
+29. **001 SNAPS-OS included software**, line 44:
+    Lists `kanshi` in utilities — not installed by
+    install.sh, not used anywhere in the codebase.
+    Outdated/incorrect.
+
+30. **001** line 20–21: Lists `adw-gtk-theme` twice
+    (once under "[^apps]" and once under "[^utilities]").
+    Duplicate entry.
+
+31. **001**: Missing several packages that install.sh
+    provides: shelly, yazi, cava, btop, code, jp2a,
+    tela-circle-icon-theme-black, python-gobject,
+    python-cairo, wtype.
+
+32. **002 SNAPS-OS Included utility scripts**, line 15:
+    Says `help.sh` alias is `tldrtui` — but `tldrtui`
+    points to `cmd-help.sh`, and `helptui` points to
+    `help.sh` (see zshconfig.zsh lines 39–40).
+    Should be `helptui`.
+
+33. **002** line 15: Also says "the terminal alias `tldrtui`"
+    — wrong alias for help.sh.
+
+34. **401–405** (customizing mango - layouts/binds/decoration/
+    autostart/monitors): All say only "# WIP".
+    Placeholder, not a factual error, but these are
+    referenced from the 000 welcome topic as if they
+    contain documentation.
+
+35. **501–502** (scripting basics / flow control):
+    Both say only "# WIP". Same issue as above.
+
+36. **301 customizing DMS**, line 19:
+    "Currently, no additional matugen templates are provided"
+    — contradicts MATUGEN.md which lists 10+ templates
+    (btop, cava, clipse, micro, etc.) that ARE provided.
+    Also contradicts the actual matugen/templates/ directory
+    which contains many templates. This statement is wrong.
+
+---
+
+snapsos/help/ (help system scripts)
+---------------------------------
+
+37. **help.sh**: The `while $true; do` loop never breaks
+    — no way to exit the help menu (no break condition
+    or exit bind). The user would have to SUPER+Q the
+    terminal. Minor UX issue.
+
+38. **references.sh**: Param `$1` is unquoted in the cat
+    command — will break if any list file path contains
+    spaces (unlikely, but a shellcheck warning).
+
+---
+
+snapsos/help/references.list
+--------------------------
+
+39. No discrepancies found — appears to be a comprehensive
+    and accurate mangoWM config reference.
+
+---
+
+snapsos/help/mangodispatchers.list, mangoipc.list, DMSipc.list
+------------------------------------------------------------
+
+40. No discrepancies found — appear accurate based on
+    mangoWM and DMS API knowledge.
+
+---
+
+snapsos/help/cmds.list
+--------------------
+
+41. Line 2: Bare `tldr` entry before any section header.
+    Minor formatting issue — the first line has no
+    section label.
+
+42. Lines 73–74: `wget` and `curl` listed twice (under
+    "Package and Software Management" and again under
+    "Networking and Remote Operations"). Duplicate.
+
+---
+
+snapsos/tuis/documentation.list
+-----------------------------
+
+43. Line 1: "MangoWM - Basic Configuration | firefox --new-tab
+    https://mangowm.github.io/docs/configuration/basics"
+    — URL may be outdated. The mangoWM docs structure
+    may have changed. Cannot verify without web access.
+
+44. Lines 22-25: Local reference sheet entries use
+    `~/.config/snapsos/help/references.sh` — this path is
+    valid only if the user installed SNAPS-OS to ~/.config/snapsos.
+    The script assumes the user's config is in their home
+    directory, which is correct for a standard install.
+
+---
+
+snapsos/tuis/documentation.sh
+----------------------------
+
+45. The script uses `eval $URL` with user-selected input
+    from fzf. If a user could inject into the .list file,
+    this is a shell injection risk. (Minor — the list is
+    user-controlled.)
+
+---
+
+matugen/templates/
+------------------
+
+46. `wallpaper.txt`: Contains only `{{image}}` — correct
+    matugen template syntax.
+
+47. `kde/color.txt`: Contains only `{{colors.source_color
+    .default.hex}}` — correct matugen template syntax.
+
+48. `InioX/source.txt`: Credit note only, no template.
+    Correct as attribution.
+
+49. `InioX/neovim/README.md`: Third-party template
+    documentation from InioX. No SNAPS-OS specific claims
+    to verify.
+
+50. `InioX/rmpc/nix-hm-example/README.md`: Third-party
+    Nix Home Manager example. No SNAPS-OS specific claims
+    to verify.
+
+---
+
+Summary of bugs discovered that affect runtime (not just docs):
+----------------------------------------------------------------
+
+A. install.sh line 47, install-scriptsonly.sh line 15:
+   Symlink target is `projectselect.sh` (no hyphen), but
+   actual file is `project-select.sh` (with hyphen).
+   The symlink `/usr/bin/projects` points to a non-existent
+   file. (Already documented in docs/dev/project-structure.md)
+
+B. zshconfig.zsh line 36: Alias `git-projects` points to
+   `project.select.sh` (with a dot), but actual file is
+   `project-select.sh` (with a hyphen). This alias fails.
+   (Not previously documented.)

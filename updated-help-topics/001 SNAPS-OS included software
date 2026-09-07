@@ -1,0 +1,69 @@
+> Included Software
+
+SNAPS-OS comes with a small inclusion of software on top of your base install (which can be any kind of arch-based OS)
+
+#from the Arch User Repository (AUR):
+
+(aur)mangowm-git - the git version of mangoWM, you *can* choose to swap this out for a pacman repository version if you wish
+(aur)dsearch-bin - indexer for file search from Dank Material Shell
+(aur)qt6ct-kde - QT6 configuration tool for KDE-style QT theming
+(aur)adwsteamgtk - applies adw-gtk theme colors to Steam
+(aur)dcal - the Dank Calendar daemon for DMS
+
+#from the pacman repositories:
+
+[^apps]:
+firefox - included browser
+nautilus - included file browser
+satty - included screenshot annotation editor
+dms-shell - Dank Material Shell environment
+shelly - default package management GUI interface
+code (vscode-oss) - default GUI code editor, used for opening project directories
+yazi - terminal file manager with image previews
+cava - terminal audio visualizer
+btop - interactive system resource monitor and process manager
+
+[^terminal]:
+ghostty - included pre-configured GPU-accelerated terminal
+zsh - included shell
+zsh-theme-powerlevel10k - theming for zsh
+zsh-history-substring-search - plugin for zsh
+zsh-syntax-highlighting - plugin for zsh
+zsh-autosuggestions - plugin for zsh
+zsh-doc - documentation for zsh
+stow - symlink management utility
+zoxide - replaces CD with a smarter CD that can jump, making navigation easier
+eza - replaces the ls command with a smarter ls using coloration, icons and extra info
+fzf - used for TUIs, also integrated into the terminal with `**<tab>` for fzf search for arguments
+micro - terminal text editor with mouse support and familiar keybinds
+wtype - wayland-native keyboard input simulator, used by scripts
+
+[^utilities]:
+brightnessctl - allows screen brightness control
+pipewire-pulse - audio server and routing
+pipewire - display/audio capture framework
+matugen - Material You color scheme generator for auto-theming
+yay - AUR helper for installing packages from the AUR
+wl-clipboard - wayland clipboard utilities used by scripts
+hyprshot - screenshot tool for wayland (used by region captures)
+grim - screenshot utility for wayland
+jp2a - converts images to ASCII art (used in terminal)
+tela-circle-icon-theme-black - icon theme for SNAPS-OS desktop
+adw-gtk-theme - libadwaita GTK theme for auto-theming
+python-gobject - Python bindings for GTK/GObject (needed for some DMS functionality)
+python-cairo - Python bindings for Cairo graphics
+
+[^fonts]:
+ttf-nerd-fonts-symbols-common
+ttf-nerd-fonts-symbols-mono
+ttf-nerd-fonts-symbols
+ttf-cascadia-code-nerd
+ttf-cascadia-mono-nerd
+ttf-terminus-nerd
+ttf-firacode-nerd
+ttf-ubuntu-nerd
+
+[^optional extras]:
+unipkg - cross-distro package manager wrapper TUI (super+shift+Y)
+dotfile-git-sync - utility to manage and sync dotfiles to a GitHub repository
+Distro Wallpapers - additional wallpaper collections for DMS

@@ -1,0 +1,54 @@
+> File Permissions
+
+File permissions control who can read, write, or execute files and directories.
+Managed with `chmod` and `chown`.
+
+### Understanding Permissions
+
+from `ls -l` output:
+drwxr-xr-x 2 den users 4096 May 24 12:34 myfolder
+-rw-r--r-- 1 den users   10 May 24 12:35 file.txt
+
+first character: file type (- = file, d = directory, l = symlink)
+next 9 characters: permissions in groups of 3 (owner, group, others)
+
+r = read, w = write, x = execute, - = no permission
+
+example: rw-r--r-- means:
+owner: read+write (rw-)
+group: read only (r--)
+others: read only (r--)
+
+### Changing with `chmod`
+
+Symbolic mode:
+chmod u+x <file>: add execute for owner
+chmod g-w <file>: remove write for group
+chmod o=r <file>: set read-only for others
+chmod a+r <file>: add read for all
+
+Numeric mode (octal):
+r=4, w=2, x=1
+chmod 755 script.sh -> owner=7(rwx), group=5(r-x), others=5(r-x)
+chmod 644 file.txt -> owner=6(rw-), group=4(r--), others=4(r--)
+
+note: a directory must be executable (+x) to be accessible. you cannot cd into
+a directory without execute permission, even if you have read permission.
+
+### Changing Ownership with `chown`
+
+chown <owner> <file>: change file owner.
+chown <owner>:<group> <file>: change owner and group.
+chown -R <owner> <directory>: recursive ownership change.
+
+### Special Permissions
+
+SUID (chmod u+s): runs file with owner's permissions.
+SGID (chmod g+s): new files inherit directory's group.
+Sticky Bit (chmod +t): only file owners can delete in directory.
+
+### Default Permissions with `umask`
+
+umask: shows current default permission mask.
+umask 0022: new files get 644, new dirs get 755.
+umask 0002: new files group-writable.

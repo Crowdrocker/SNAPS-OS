@@ -1,0 +1,89 @@
+> Window Management
+
+Window management is done primarily through your keyboard, with mouse options available.
+
+Within mango, windows automatically lay themselves out depending on your configured layout.
+you can tweak the layout at any time using *SUPER+SHIFT+W*.
+
+the different layouts are covered in 105 - layouts.
+
+### General
+
+[^SUPER+Q]: close window
+quits the active window, like pressing X on a desktop.
+
+[^SUPER+T]: float/unfloat window
+floated windows appear above tiled applications and do not tile.
+
+[^SUPER+F]: toggle fullscreen
+puts the application in front of tiled and floating windows but behind overlay.
+
+[^SUPER+ALT+F]: toggle fake fullscreen
+tells the app it's fullscreen but keeps it tiled. useful to hide top bars and decoration.
+
+[^SUPER+SHIFT+P]: toggle overlay mode
+shows over everything regardless of tiled, floating or fullscreen state.
+
+[^SUPER+P]: pin window (global)
+makes the window stay on screen regardless of workspace/tag. toggle to unpin.
+
+[^SUPER+A]: special layout toggle
+dwindle: maximizes focused window (windowed, covers all others)
+scroller: changes scroller ratio for focused window
+grid layouts: toggles gaps
+deck and master/stack (tile): swaps focused window with master
+
+[^ALT+TAB]: toggle and tab through overview
+shows all windows on current monitor. hold alt and press tab to cycle.
+release alt to open the selected window's workspace.
+left click to open, right click to close.
+
+[^SUPER+SHIFT+A]: cycle through common layouts
+configured in layouts.conf via circle_layout. default cycle:
+dwindle -> scroller -> vertical scroller -> center tile -> tile
+
+### Workspace-related
+
+[^SUPER+1-9]: switch to workspace
+
+[^SUPER+SHIFT+1-9]: move focused window to workspace
+
+[^SUPER+ALT+1-9]: toggle workspace visibility
+mango lets you view multiple tags at once. toggles visibility of a workspace.
+
+### Scratchpad
+
+[^SUPER+CTRL+C]: move window to scratchpad
+minimizes the focused window to the monitor's scratchpad. multiple windows can be stored.
+
+[^SUPER+ALT+C]: move window out of scratchpad
+brings last focused scratchpad window back out.
+
+[^SUPER+C]: open/close scratchpad
+cycles through windows in the current monitor's scratchpad.
+
+[^SUPER+ALT+SPACE]: toggle terminal scratchpad
+special scratchpad for a ghostty terminal. if no terminal exists, spawns one.
+if one exists but isn't in scratchpad, pulls it in.
+SNAPS-OS pre-loads one ghostty instance to the main monitor's terminal scratchpad.
+
+### Arrow Keys
+
+[^SUPER+ARROWS]: move focus between windows
+
+[^SUPER+SHIFT+LEFT/RIGHT]: focus previous/next (stack-based layouts)
+
+[^SUPER+SHIFT+UP/DOWN]: exchange stack clients (prev/next in tile layouts)
+
+[^SUPER+ALT+ARROWS]: resize window
+
+### Mouse Binds
+
+[^SUPER+LEFTCLICK-DRAG]: drag and drop window
+window is temporarily floating while dragged; shows where it will tile.
+
+[^SUPER+RIGHTCLICK-DRAG]: resize window
+for tiled windows, constrained by adjacent windows.
+
+[^SUPER+MIDDLECLICK]: maximize window
+keeps tiled but uses full window area (top bar still visible).

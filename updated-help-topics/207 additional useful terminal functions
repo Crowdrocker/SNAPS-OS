@@ -1,0 +1,71 @@
+> Additional Useful Terminal Functions
+
+### Process Management
+
+ps: lists running processes. `ps aux` shows all processes for all users.
+kill <PID>: terminates a process by ID. `kill 1234`
+killall <name>: terminates by name. `killall firefox`
+top or btop: interactive system resource monitor.
+
+### Archiving and Compression
+
+tar -cvf archive.tar <files>: creates tar archive.
+tar -xvf archive.tar: extracts tar archive.
+gzip <file>: compresses file (adds .gz).
+gunzip <file.gz>: decompresses.
+
+### Networking
+
+ping <host>: checks connectivity.
+curl <URL>: downloads or interacts with a URL.
+wget <URL>: downloads a file.
+ssh <user>@<host>: connects to remote machine.
+
+### System Information
+
+uname -a: kernel version and architecture.
+df -h: disk space in human-readable format.
+free -h: RAM and swap usage.
+uptime: system uptime and load averages.
+
+### Terminal Shortcuts
+
+ctrl+C: interrupt current command.
+ctrl+Z: suspend current command (background).
+ctrl+D: exit shell or send EOF.
+ctrl+R: search command history.
+!!: repeat last command. `sudo !!` repeats last with sudo.
+tab: auto-complete.
+
+### Aliases
+
+add shortcuts in ~/.zshrc and run `source ~/.zshrc` to apply.
+
+default SNAPS-OS aliases:
+find - fzf-based file finder with previews
+microfind - like find, opens selected in micro
+ls - eza with icons, colors, grouping
+la - list all files
+ll - long format
+lt - tree format, 4 levels deep
+l. - hidden files only
+update - sudo pacman -Syu
+jctl - minimal journalctl command
+cmdhist - search and select from command history
+tipme - get a random tip
+cowtip - get a random tip from an RGB cow
+
+### fzf Integration
+
+type `**` and press <tab> in the terminal for fzf autocomplete on file paths.
+
+### Environment Variables
+
+printenv: display all environment variables.
+echo $VARIABLE: print a specific variable's value.
+export VARIABLE=value: set a variable for the current session.
+
+### `locate`
+
+locate <pattern>: quickly find files using a pre-built database.
+run `sudo updatedb` first if the database is not current.

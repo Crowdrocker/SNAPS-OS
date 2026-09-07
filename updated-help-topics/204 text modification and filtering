@@ -1,0 +1,38 @@
+> Text Modification and Filtering
+
+Linux includes `grep`, `sed`, `awk`, and `cut` for filtering and modifying text.
+
+all these can work on files directly or in pipes (see topic 205):
+`somecommand | grep "pattern"`
+`somecommand | grep "pattern" | grep -v "blah"` (has pattern, no blah)
+
+combining: `somecommand | grep "pattern" | sed 's/pat/lec/' | awk '{print $1,$2,$3}'`
+
+### Searching with `grep`
+
+`grep "pattern" <filename>`: prints lines containing "pattern".
+`grep -i "pattern" <filename>`: case-insensitive search.
+`grep -v "pattern" <filename>`: excludes lines matching "pattern".
+`grep -r "pattern" <directory>`: recursive search in directory.
+`grep -n "pattern" <filename>`: shows line numbers.
+
+### Modifying with `sed`
+
+`sed 's/old/new/' <filename>`: replaces first occurrence per line.
+`sed 's/old/new/g' <filename>`: replaces all occurrences per line.
+`sed -i 's/old/new/g' <filename>`: edit file in-place (permanently saves).
+
+use different delimiters if needed: `sed 's|/path/to|/new/path|g'`
+
+### Extracting Columns with `cut`
+
+`cut -d',' -f1 <filename>`: extracts first field from comma-delimited file.
+`cut -d',' -f1,3,5 <filename>`: extracts multiple fields.
+`cut -c1-5 <filename>`: extracts characters 1-5 from each line.
+
+### Processing Text with `awk`
+
+`awk '{print $1}' <filename>`: prints first field per line (default: whitespace delimiter).
+`awk -F',' '{print $2}' <filename>`: comma delimiter, print second field.
+`awk '/pattern/ {print $0}' <filename>`: prints lines matching pattern.
+`awk '{print NF}' <filename>`: prints number of fields per line.

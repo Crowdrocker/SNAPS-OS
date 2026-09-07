@@ -1,0 +1,64 @@
+> Customizing Mango - Decoration
+
+Decoration settings are in ~/.config/mango/decoration.conf
+
+### Animations
+
+animations=1: enable window animations.
+layer_animations=1: enable layer animations.
+animation_type_open=zoom: zoom effect on window open.
+animation_type_close=zoom: zoom effect on window close.
+animation_fade_in/out=1: fade effects.
+
+animation_duration_*: timing in ms:
+move=400, open=500, tag=350, close=300, focus=600
+
+animation_curve_*: cubic bezier curves for easing:
+open/move/tag: 0.46,1.0,0.29,1
+close: 0.08,0.92,0,1
+focus: 0.46,1.0,0.29,1
+
+### Blur
+
+blur=1: enable background blur on windows.
+blur_layer=0: disable blur on layer surfaces.
+blur_optimized=0: standard blur quality.
+blur_params_*:
+num_passes=3, radius=3, noise=0.02
+brightness=0.9, contrast=0.9, saturation=1.2
+
+### Shadow Settings
+
+shadows=1: enable window shadows.
+layer_shadows=0: no layer shell shadows.
+shadow_only_floating=1: only floating windows get shadows.
+shadows_size=10, shadows_blur=15
+shadowscolor=0x1a1a1a99 (RGBA hex)
+
+### Window Opacity
+
+focused_opacity=0.9: active window opacity.
+unfocused_opacity=0.8: inactive window opacity.
+
+### Borders
+
+border_radius=10: corner rounding in pixels.
+no_radius_when_single=0: keep radius even with one window.
+borderpx=2: border width in pixels.
+bordercolor=0x88aaad82: unfocused border color.
+focuscolor=0x33ccffee: focused border color.
+rootcolor=0x1f232bff: root window background color.
+
+### Tab Bar Decoration
+
+tab_bar_decorate_border_width=2
+tab_bar_decorate_corner_radius=10
+tab_bar_decorate_padding_x/y=3
+tab_bar_decorate_font_desc: font for tab labels.
+
+### Jump Label Decoration
+
+jump_label_decorate_border_width=2
+jump_label_decorate_corner_radius=10
+jump_label_decorate_padding_x/y=6
+jump_label_decorate_font_desc: font for jump labels (20pt).

@@ -1,0 +1,68 @@
+> Customizing Mango - Binds
+
+Keybinds are configured in ~/.config/mango/binds.conf
+
+### Bind Types
+
+`bind=MOD+KEY,dispatcher`: standard keybind (press to trigger).
+`bindl=MOD+KEY,dispatcher`: binds to key release (not press).
+`binds=MOD+KEY,dispatcher`: binding stays locked until key is released.
+`bindr=MOD+KEY,dispatcher`: runs on key release (used for toggle-hold patterns).
+`bindp=MOD+KEY,dispatcher`: binding for a specific key press event.
+
+### Format
+
+MOD+KEY,dispatcher,params
+
+examples:
+bind=SUPER,Space,spawn_shell,dms ipc call spotlight toggle
+bind=SUPER,RETURN,spawn_shell,ghostty
+bind=SUPER,Q,killclient
+
+### Common Modifiers
+
+SUPER (Windows key), CTRL, ALT, SHIFT, NONE (no modifier).
+Combine with +: SUPER+SHIFT, SUPER+CTRL+ALT
+
+### Dispatchers
+
+spawn_shell: runs a shell command.
+killclient: close focused window.
+togglefloating: float/unfloat window.
+togglefullscreen: fullscreen toggle.
+tag <num>: move window to workspace.
+view <num>,<togglemode>: switch workspace.
+focusdir <dir>: focus in direction.
+resizewin <x>,<y>: resize by pixels.
+
+### Mousebinds
+
+mousebind=MOD,btn_left,moveresize,curmove
+mousebind=MOD,btn_right,moveresize,curresize
+mousebind=MOD,btn_middle,togglemaximizescreen
+
+### Axisbinds
+
+axisbind=MOD,DIRECTION,dispatcher
+example:
+axisbind=SUPER,UP,viewtoleft_have_client,0
+
+### Gesturebinds
+
+for touchpad/tablet gestures (experimental).
+
+### Switchbinds
+
+toggle bindings using switch state.
+
+### Keymodes
+
+create custom key modes to rebind keys temporarily:
+keymode=my_mode
+bind=...,...,dispatcher
+keymode_exit=my_mode
+
+### DMS-Integrated Binds
+
+binds added via DMS settings are saved to ~/.config/mango/dms/binds.conf
+this file is sourced by the main binds.conf. DMS overwrites take priority.

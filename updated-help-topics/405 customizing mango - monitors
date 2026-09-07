@@ -1,0 +1,58 @@
+> Customizing Mango - Monitors
+
+Monitor configuration is in ~/.config/mango/monitors.conf
+
+### monitorrule Format
+
+monitorrule=selector,parameters
+
+Selectors (comma-separated, regex match):
+name: matches output name (e.g. name:^DP-1$)
+make: matches manufacturer
+model: matches monitor model
+serial: matches serial number
+
+Parameters (comma-separated):
+width: horizontal resolution
+height: vertical resolution
+refresh: refresh rate in Hz
+x: horizontal position in layout
+y: vertical position in layout
+scale: fractional scaling (e.g. 1.0, 1.5, 2.0)
+vrr: variable refresh rate (0=off, 1=on)
+rr: custom refresh rate
+custom: additional custom parameters
+
+### Default SNAPS-OS Configuration
+
+monitorrule=name:^HDMI-A-1$,width:1920,height:1080,refresh:60,x:1920,y:0
+monitorrule=name:^DP-1$,width:1920,height:1080,refresh:60,x:0,y:0
+monitorrule=name:^DP-2$,width:1920,height:1080,refresh:60,x:3840,y:0
+
+this configures 3 monitors side by side at 1920x1080, 60Hz.
+
+### Cross-Monitor Settings
+
+focus_cross_monitor=1: allow focus to move between monitors.
+exchange_cross_monitor=1: allow windows to be moved between monitors.
+syncobj_enable=1: enable sync objects for better rendering.
+
+### Tearing
+
+allow_tearing: set to 1 to allow screen tearing (reduces latency).
+not set in default config (commented or omitted).
+
+### toggle_monitor
+
+can be used to toggle a specific monitor on/off in scripts.
+
+### Adaptive Sync (VRR)
+
+set vrr=1 in a monitorrule to enable adaptive sync.
+also configurable per-monitor in DMS settings (super+S > displays).
+
+### Using DMS Displays Settings
+
+the graphical display settings in DMS (super+S > displays) will modify
+monitors.conf for you. manual editing is mainly for advanced setups
+or monitor rules that the GUI doesn't expose.

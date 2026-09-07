@@ -1,0 +1,52 @@
+> DMS Settings - Personalization
+
+In-depth guide to the personalization section of DMS settings (super+S > personalization).
+
+### Wallpaper
+
+set wallpaper per-monitor or per-mode (light/dark).
+the wallpaper script (*super+W*) sets wallpapers by group folder.
+per-mode or per-monitor settings will override the script's behavior.
+
+### Color Sources
+
+Auto (matugen): automatically generates a color scheme from your wallpaper.
+Manual: you pick the primary/accent colors directly.
+Custom: specify custom hex colors.
+Registry: uses colors from a registry file.
+
+### Matugen Palette Options
+
+material you color palette variants:
+vibrant - balanced vibrant colors (default)
+muted - soft, desaturated colors
+tonal - single-hue tonal palette
+neutral - grayscale/neutral palette
+vibrant_dark - vibrant but darker tones
+expressive - more saturated, expressive colors
+
+each produces a different look from the same wallpaper. experiment with these.
+
+### Dark/Light Mode
+
+toggle with *super+shift+T* or in settings.
+matugen generates separate palettes for light and dark mode.
+per-mode wallpapers let you set different wallpapers for light/dark.
+
+### GTK/QT Theme Application
+
+GTK themes are applied via adw-gtk-theme (libadwaita).
+QT themes via qt6ct-kde and kvantum.
+if theming is not working, click the fix button at the bottom of the themes page.
+for vesktop: enable theme in vencord settings, toggle theme to refresh.
+for VSCode/code-oss: may need manual theme selection.
+
+### Font Settings
+
+set system font, monospace font, and interface font sizes.
+fonts with nerd font icons are recommended (CaskaydiaCove NFM, FiraCode Nerd).
+
+### Animations
+
+enable/disable DMS UI animations (independent of mango window animations).
+animation speed and style settings for DMS panels and transitions.

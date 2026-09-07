@@ -1,0 +1,37 @@
+> Basic Terminal Utilities
+
+Essential utilities for viewing, filtering, and manipulating text and files.
+
+### Viewing File Contents
+
+`cat <filename>`: displays entire file contents to terminal.
+
+`less <filename>`: interactive file viewer. scroll with arrow keys, exit with *q*.
+
+`head -n <num> <filename>`: shows first <num> lines of a file. default is 10.
+
+`tail -n <num> <filename>`: shows last <num> lines of a file. default is 10.
+`tail -f <filename>`: follows file updates in real-time (useful for logs).
+
+### Printing Text
+
+`echo "text"`: prints text to terminal. often used with pipes or redirection.
+
+### Counting Words and Lines
+
+`wc <filename>`: counts lines, words, and characters.
+output format: "5  10  50 filename" (5 lines, 10 words, 50 chars).
+`wc -l <filename>`: counts only lines.
+
+### Sorting and Unique Lines
+
+`sort <filename>`: sorts lines alphabetically.
+`sort -n <filename>`: sorts numerically.
+
+`uniq <filename>`: removes consecutive duplicate lines from a sorted file.
+common pattern: `sort list.txt | uniq`
+
+### Watching Output
+
+`watch -n <num> <command>`: runs command repeatedly, updating display every <num> seconds.
+example: `watch -n 1 iostat`

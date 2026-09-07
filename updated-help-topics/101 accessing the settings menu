@@ -1,0 +1,22 @@
+> Accessing the Settings Menu
+
+the Dank Material Shell Settings is where you configure most of your basic things.
+
+there is a custom bind for this: *SUPER+S*
+
+you can also access it from multiple places in the top bar, the app launcher (*SUPER+SPACE*) and the control center (*SUPER+ESCAPE*)
+
+the settings menu is divided into the following sections:
+
+personalization - theming, typography, animations, sounds, time, weather and wallpapers
+dank bar - basic bar settings, widgets and presets
+workspaces and widgets - complex configurations for desktop widgets and bar items
+dock and launcher - app launcher and toggleable dock configuration
+keyboard shortcuts - graphical menu to add your own keybinds (saved to dms/binds.conf)
+displays - graphical display configuration (resolution, refresh rate, layout)
+network - wifi, ethernet and VPN management
+system - audio, clipboard manager and multiplexer/tiling settings
+power and security - lock screen and power/sleep settings
+plugins - install DMS plugins to extend functionality
+
+take the time to browse through these and try some stuff.

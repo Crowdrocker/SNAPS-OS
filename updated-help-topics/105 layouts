@@ -1,0 +1,89 @@
+> Layouts
+
+the following layouts exist, most with multiple variants:
+
+- dwindle
+- scroller (horizontal/vertical)
+- master/stack (called tile - left/right/vertical/center)
+- monocle
+- grid (horizontal/vertical)
+- fair
+- deck
+
+this also covers the *overview* and *scratchpad*.
+
+## Dwindle
+
+binary space partitioning: each new window splits the focused window across its longest side.
+wider than tall -> vertical split. taller than wide -> horizontal split.
+
+special toggle *super+A*: maximizes the focused window (windowed, covering others).
+
+## Scroller
+
+horizontal and vertical variants.
+
+windows laid out in an infinitely scrollable strip of columns.
+you can vertically tile within a column.
+
+special toggle *super+A*: changes the width of the focused scrolling column between presets.
+scroll with *super+arrow keys* or mouse over partially-offscreen windows.
+
+## Master/Stack (Tile)
+
+left, right, vertical and center variants.
+
+primary master window uses ~70% of the monitor. all other windows tile around it.
+
+left/right: stack tiles vertically beside master.
+vertical: stack tiles horizontally below master.
+center: stack tiles alternating left and right of master.
+
+special toggle *super+A*: swaps focused window with master.
+drag and drop a window into master area to make it master.
+
+## Grid
+
+simple grid, all windows same size.
+horizontal grid: left to right, then top to bottom.
+vertical grid: top to bottom, then left to right.
+
+special toggle *super+A*: toggles gaps and borders.
+
+## Fair
+
+similar to grid but fills the monitor as evenly as possible, no empty space.
+
+## Monocle
+
+one window at a time. cycle with *super+shift+left/right* or use overview.
+
+special toggle does nothing.
+
+## Deck
+
+combination of monocle and master/stack: master window plus a monocle-style stack.
+
+special toggle *super+A*: makes focused window the master.
+
+## Overview
+
+enter by moving mouse to top-left corner (hot corner) or holding alt+tab.
+
+shows all windows on that monitor regardless of tag/workspace/layout.
+tab to cycle, release alt to focus, left/right click to focus/close.
+
+## Scratchpad
+
+hidden space for frequently-accessed items (notepad, music player, terminal, file browser).
+
+*super+C*: toggle visibility, cycle through multiple items.
+*super+ctrl+C*: move window to scratchpad.
+*super+alt+C*: move window out of scratchpad.
+
+scratchpad windows float slightly smaller than your window for drag-and-drop.
+
+SNAPS-OS also has a special terminal scratchpad (*super+alt+space*):
+- toggles visibility if a terminal with the special title exists inside
+- spawns one if it doesn't exist
+- pre-loaded on primary monitor via autostart

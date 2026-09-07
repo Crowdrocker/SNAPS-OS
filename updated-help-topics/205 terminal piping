@@ -1,0 +1,44 @@
+> Terminal Piping
+
+Piping (`|`) and redirection (`>`, `>>`, `<`) chain commands together and control input/output.
+
+### Pipe `|`
+
+`command1 | command2`: sends command1's output as command2's input.
+
+example: `ls | grep "txt"` - list files, filter for "txt"
+example: `cat log.txt | grep "error" | less` - search and view interactively
+
+### Conditional Operators
+
+`command1 && command2`: runs command2 only if command1 succeeds (exit code 0).
+example: `mkdir new_folder && cd new_folder`
+example: `git commit -m "msg" && git push`
+
+`command1 || command2`: runs command2 only if command1 fails (non-zero exit).
+example: `cat file.txt || echo "File not found"`
+example: `ping -c 1 google.com || echo "Network unavailable"`
+
+### Background `&`
+
+`command &`: runs command in the background, keeping the terminal usable.
+example: `firefox &`
+example: `(cp -r ~/Documents/* ~/Backups/ && notify-send "done!") &`
+
+the command is still a child of the terminal and will exit when you close it.
+
+### Redirection
+
+`command > file.txt`: redirects output to file (overwrites).
+`command >> file.txt`: appends output to file.
+`command < file.txt`: redirects file contents as input to command.
+
+### /dev/null
+
+`command > /dev/null`: discards command output.
+`command 2> /dev/null`: discards error messages.
+
+### tee
+
+`command | tee file.txt`: shows output in terminal AND saves to file.
+`command | tee -a file.txt`: appends to file.
